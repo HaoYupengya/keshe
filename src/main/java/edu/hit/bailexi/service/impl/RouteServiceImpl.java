@@ -70,4 +70,13 @@ public class RouteServiceImpl implements RouteService {
         return routeDao.findNew().getRid();
     }
 
+    public List<Route> findByjunzi(String rid){
+        if (rid != null){
+            //1.根据id去route中查询route对象
+            List<Route> route = routeDao.findByjunzi(Integer.parseInt(rid));
+            return route;
+        }
+        return null;
+    }
+
 }

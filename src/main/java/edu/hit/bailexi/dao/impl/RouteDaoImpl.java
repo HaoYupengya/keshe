@@ -98,4 +98,10 @@ public class RouteDaoImpl implements RouteDao {
         String sql = "select * from tab_route order by rid desc limit 1";
         return  template.queryForObject(sql,new BeanPropertyRowMapper<Route>(Route.class));
     }
+
+    public List<Route> findByjunzi(int rid){
+        String sql = "select * from tab_route where junzi = (select junzi from tab_route where rid = ?)";
+//        String sql = "select * from tab_route where rid = ?";
+        return template.query(sql, new BeanPropertyRowMapper<>(Route.class),rid);
+    }
 }

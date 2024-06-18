@@ -24,4 +24,5 @@ public interface RouteDao {
     void save(Route route);
 
     Route findNew();
+    public List<Route> findByjunzi(int rid);
 }

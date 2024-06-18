@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/route/*")
 public class RouteServlet extends BaseServlet {
@@ -137,5 +138,16 @@ public class RouteServlet extends BaseServlet {
         }
 
         favoriteService.removeFavourite(rid, uid);
+    }
+
+    public void findByjunzi(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String rid = request.getParameter("rid");
+        //调用service查询所有
+        List<Route> route = service.findByjunzi(rid);
+        //序列化json返回
+ /*        ObjectMapper mapper = new ObjectMapper();
+        response.setContentType("application/json;charset=utf-8");
+        mapper.writeValue(response.getOutputStream(),cs);*/
+        writeValue(route,response);
     }
 }
