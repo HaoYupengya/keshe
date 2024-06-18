@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>资料网</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/include.js"></script>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--引入头部-->
+<div id="header"></div>
+
+<div class="carousel-inner" role="listbox">
+    <div class="inner-left">
+        <ul>
+            <li onmouseover="fun1() " onmouseout="fun2()"><span>二手书籍</span>
+                <span2> ></span2>
+            </li>
+<!--            <li onmouseover="fun3() " onmouseout="fun4()"><span>冰镇饮品</span>-->
+<!--                <span2> ></span2>-->
+<!--            </li>-->
+<!--            <li onmouseover="fun5()" onmouseout="fun6()"><span>零食小吃</span>-->
+<!--                <span2> ></span2>-->
+<!--            </li>-->
+<!--            <li onmouseover="fun7()" onmouseout="fun8()"><span>宿舍好物</span>-->
+<!--                <span2> ></span2>-->
+<!--            </li>-->
+<!--            <li onmouseover="fun9()" onmouseout="fun10()"><span>电子产品</span>-->
+<!--                <span2> ></span2>-->
+<!--            </li>-->
+<!--            <li onmouseover="fun11()" onmouseout="fun12()"><span>洗漱用品</span>-->
+<!--                <span2> ></span2>-->
+<!--            </li>-->
+
+        </ul>
+    </div>
+    <div class="inner-right-1" id="r1" onmouseover="fun1()" onmouseout="fun2()">
+        <ul>
+            <li>
+                <span1>大一</span1>
+                <a href="">工数</a>
+                <a href="">英语</a>
+                <a href="video.html">线代</a>
+                <a href="upload.html">心里健康</a>
+                <a href="#">习题册</a>
+            </li>
+            <li>
+                <span1>大二</span1>
+                <a href="#">数据结构</a>
+                <a href="#">算法设计</a>
+                <a href="#">UML与面向对象</a>
+                <a href="#">计算机组成原理</a>
+            </li>
+            <li>
+                <span1>大三</span1>
+                <a href="#">编译原理</a>
+                <a href="#">计算机网络</a>
+            </li>
+            <li>
+                <span1>大四</span1>
+                <a href="#">就业指导</a>
+            </li>
+            <li>
+                <span1>考研</span1>
+                <a href="#">数一</a>
+                <a href="#">数二</a>
+                <a href="#">数三</a>
+                <a href="#">考研英语</a>
+            </li>
+        </ul>
+    </div>
+
+
+<!--    <div class="inner-right-1" id="r2" onmouseover="fun3()" onmouseout="fun4()">-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <a href="#"><img src="./imgs/drink1.jpg" alt=""><span class="r-2-span">冰红茶</span></a>-->
+<!--                <a href="#"><img src="./imgs/drink2.jpg" alt=""><span class="r-2-span2">热带风味</span></a>-->
+<!--            </li>-->
+<!--            <li>-->
+
+<!--        </ul>-->
+<!--    </div>-->
+<!--    <div class="inner-right-1" id="r3" onmouseover="fun5()" onmouseout="fun6()">-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <span1>辣条</span1>-->
+<!--                <a href="#">亲嘴烧</a>-->
+<!--                <a href="#">大辣片</a>-->
+<!--                <a href="#">印度飞饼</a>-->
+<!--                <a href="#">大刀肉</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <div class="inner-right-1" id="r4" onmouseover="fun7()" onmouseout="fun8()">-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <span1>收纳</span1>-->
+<!--                <a href="#">鞋架</a>-->
+<!--                <a href="#">收纳箱</a>-->
+<!--                <a href="#">床头置物架</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span1>大件</span1>-->
+<!--                <a href="#">座椅</a>-->
+<!--                <a href="#">沙发</a>-->
+<!--                <a href="#">床垫</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <div class="inner-right-1" id="r5" onmouseover="fun9()" onmouseout="fun10()">-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <span1>耳机</span1>-->
+<!--                <a href="#">3.5mm耳机</a>-->
+<!--                <a href="#">蓝牙耳机</a>-->
+<!--                <a href="#">C口耳机</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span1>手机配件</span1>-->
+<!--                <a href="#">钢化膜</a>-->
+<!--                <a href="#">手机壳</a>-->
+<!--                <a href="#">充电器</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+<!--    <div class="inner-right-1" id="r6" onmouseover="fun11()" onmouseout="fun12()">-->
+<!--        <ul>-->
+<!--            <li>-->
+<!--                <span1>洗发水</span1>-->
+<!--                <a href="#">清扬</a>-->
+<!--                <a href="#">海飞丝</a>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--                <span1>洗漱用品</span1>-->
+<!--                <a href="#">水盆</a>-->
+<!--                <a href="#">搓澡巾</a>-->
+<!--                <a href="#">沐浴露</a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </div>-->
+
+
+    <div class="items">
+        <img src="imgs/banner_1.jpg" alt="" id="pic">
+    </div>
+
+
+    <div class="bannerbtn">
+        <a class="btn bt" id="btn1" onclick="change1();changecolor()"></a>
+        <a class="btn" id="btn2" onclick="change2();changecolor()"></a>
+        <a class="btn" id="btn3" onclick="change3();changecolor()"></a>
+    </div>
+
+</div>
+
+
+<section id="content">
+    <!-- 229精选start-->
+    <section class="hemai_jx">
+        <div class="jx_top">
+            <div class="jx_tit">
+                <img src="images/icon_5.jpg" alt="">
+                <span>网站精选</span>
+            </div>
+            <!-- Nav tabs -->
+            <ul class="jx_tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <span><a href="#popularity" aria-controls="popularity" role="tab"
+                             data-toggle="tab">二手好书</a></span>
+
+                </li>
+                <li role="presentation">
+                    <span><a href="#newest" aria-controls="newest" role="tab" data-toggle="tab">精品课程</a></span>
+
+                </li>
+                <li role="presentation">
+                    <span> <a href="#theme" aria-controls="theme" role="tab" data-toggle="tab">考研图书</a></span>
+
+                </li>
+            </ul>
+        </div>
+        <div class="jx_content">
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="popularity">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/book1.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>！学长推荐！<br>
+                                        精品二手 数据结构</h3>
+                                    <div class="price">线下取货<em>￥</em><strong>10</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/book2.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>开卷好书 UML2面向对象技术分析与设计</h3>
+                                    <div class="price">线下取货<em>￥</em><strong>10</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/book3.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>二手99成新 <br>
+                                        计算机组成原理</h3>
+                                    <div class="price">线下取货<em>￥</em><strong>10</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/book4.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>java程序设计 <br>
+                                        学长推荐，无敌好用</h3>
+                                    <div class="price">线下取货<em>￥</em><strong>10</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="newest">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp2.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>徐涛政治讲义,免费正版高清资源</h3>
+                                    <div class="price">在线观看</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp2.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>徐涛政治讲义,免费正版高清资源</h3>
+                                    <div class="price">在线观看</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp2.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>徐涛政治讲义,免费正版高清资源</h3>
+                                    <div class="price">在线观看</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp2.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>徐涛政治讲义,免费正版高清资源</h3>
+                                    <div class="price">在线观看</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="theme">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp3.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>金榜数学基础篇，高清扫描版pdf，全网最低</h3>
+                                    <div class="price">网付价<em>￥</em><strong>5</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp3.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>金榜数学基础篇，高清扫描版pdf，全网最低</h3>
+                                    <div class="price">网付价<em>￥</em><strong>5</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp3.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>金榜数学基础篇，高清扫描版pdf，全网最低</h3>
+                                    <div class="price">网付价<em>￥</em><strong>5</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="javascript:">
+                                <img src="imgs/pp3.jpg" alt="">
+                                <div class="has_border">
+                                    <h3>金榜数学基础篇，高清扫描版pdf，全网最低</h3>
+                                    <div class="price">网付价<em>￥</em><strong>5</strong><em>起</em></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 229精选end-->
+    <!-- 国内游 start-->
+    <section class="hemai_jx">
+        <div class="jx_top">
+            <div class="jx_tit">
+                <img src="imgs/sg.png" alt="" class="shoes">
+                <span>名师课程</span>
+            </div>
+        </div>
+        <div class="heima_gn">
+            <div class="guonei_l">
+                <img src="imgs/tea.jpg" alt="" class="haibao">
+            </div>
+            <div class="guone_r">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 国内游 end-->
+    <!-- 境外游 start-->
+    <section class="hemai_jx">
+        <div class="jx_top">
+            <div class="jx_tit">
+                <img src="imgs/ydx.png" alt="" class="shoes">
+                <span>出国必备</span>
+            </div>
+        </div>
+        <div class="heima_gn">
+            <div class="guonei_l">
+                <img src="imgs/ys1.jpg" alt="" class="haibao">
+            </div>
+            <div class="guone_r">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/ye2.png" alt="">
+                            <div class="has_border">
+                                <h3>剑桥雅思真题详解高清pdf版/全12册</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/ye2.png" alt="">
+                            <div class="has_border">
+                                <h3>剑桥雅思真题详解高清pdf版/全12册</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/ye2.png" alt="">
+                            <div class="has_border">
+                                <h3>剑桥雅思真题详解高清pdf版/全12册</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/ye2.png" alt="">
+                            <div class="has_border">
+                                <h3>剑桥雅思真题详解高清pdf版/全12册</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/ye2.png" alt="">
+                            <div class="has_border">
+                                <h3>剑桥雅思真题详解高清pdf版/全12册</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/ye2.png" alt="">
+                            <div class="has_border">
+                                <h3>剑桥雅思真题详解高清pdf版/全12册</h3>
+
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 境外游 end-->
+</section>
+<!-- 旅游 end-->
+<!--导入底部-->
+<div id="footer"></div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-3.3.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!--导入布局js，共享header和footer-->
+<script type="text/javascript" src="js/include.js"></script>
+<script type="text/javascript">
+
+
+    function fun1() {
+        document.getElementById("r1").style.display = "block";
+    }
+
+    function fun2() {
+        document.getElementById("r1").style.display = "none";
+    }
+
+    function fun3() {
+        document.getElementById("r2").style.display = "block";
+    }
+
+    function fun4() {
+        document.getElementById("r2").style.display = "none";
+    }
+
+    function fun5() {
+        document.getElementById("r3").style.display = "block";
+    }
+
+    function fun6() {
+        document.getElementById("r3").style.display = "none";
+    }
+
+    function fun7() {
+        document.getElementById("r4").style.display = "block";
+    }
+
+    function fun8() {
+        document.getElementById("r4").style.display = "none";
+    }
+
+    function fun9() {
+        document.getElementById("r5").style.display = "block";
+    }
+
+    function fun10() {
+        document.getElementById("r5").style.display = "none";
+    }
+
+    function fun11() {
+        document.getElementById("r6").style.display = "block";
+    }
+
+    function fun12() {
+        document.getElementById("r6").style.display = "none";
+    }
+
+    let number = 1;
+
+    function changeImg() {
+        number++;
+        if (number > 3) {
+            number = 1;
+        }
+        document.getElementById("pic").src = "imgs/banner_" + number + ".jpg";
+        changecolor(number);
+    }
+
+    setInterval(changeImg, 5000);
+
+    function change1() {
+        document.getElementById("pic").src = "imgs/banner_1.jpg";
+        number = 1
+    }
+
+    function change2() {
+        document.getElementById("pic").src = "imgs/banner_2.jpg";
+        number = 2
+    }
+
+    function change3() {
+        document.getElementById("pic").src = "imgs/banner_3.jpg";
+        number = 3
+    }
+
+    function changecolor() {
+        if (number === 1) {
+            document.getElementById("btn1").style.backgroundColor = "rgba(175, 239, 239,1)";
+            document.getElementById("btn2").style.backgroundColor = "rgba(175, 239, 239,0.5)";
+            document.getElementById("btn3").style.backgroundColor = "rgba(175, 239, 239,0.5)";
+        } else if (number === 2) {
+            document.getElementById("btn1").style.backgroundColor = "rgba(175, 239, 2390.5)";
+            document.getElementById("btn2").style.backgroundColor = "rgba(175, 239, 239,1)";
+            document.getElementById("btn3").style.backgroundColor = "rgba(175, 239, 239,0.5)";
+        } else {
+            document.getElementById("btn1").style.backgroundColor = "rgba(175, 239, 239,0.5)";
+            document.getElementById("btn2").style.backgroundColor = "rgba(175, 239, 239,0.5)";
+            document.getElementById("btn3").style.backgroundColor = "rgba(175, 239, 239,1)";
+        }
+    }
+</script>
+</body>
+</html>

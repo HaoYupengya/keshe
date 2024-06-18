@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>上传</title>
+  <link rel="stylesheet" type="text/css" href="css/common.css">
+  <link rel="stylesheet" href="css/register.css">
+  <!--导入jquery-->
+  <script src="js/jquery-3.3.1.js"></script>
+
+</head>
+<body>
+<!--引入头部-->
+<div id="header"></div>
+<!-- 头部 end -->
+<div class="rg_layout">
+  <div class="rg_form clearfix">
+    <div class="rg_form_left">
+      <p>NEW</p>
+      <p>VIDEO UPLOAD</p>
+    </div>
+    <div class="rg_form_center">
+
+      <!--如果注册失败，显示一条提示信息-->
+      <div id="errorMsg" style="color:red;text-align: center"></div>
+      <!--注册表单-->
+      <form id="registerForm" action="upload" enctype="multipart/form-data">
+        <!--提交处理请求的标识符-->
+        <input type="hidden" name="action" value="register">
+        <table style="margin-top: 25px;">
+          <tr>
+            <td class="td_left">
+              <label for="videoname">视频名称</label>
+            </td>
+            <td class="td_right">
+              <input type="text" id="videoname" name="videoname" placeholder="请输入名称">
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left">
+              <label for="introduction">简介</label>
+            </td>
+            <td class="td_right">
+              <input type="text" id="introduction" name="introduction" placeholder="请输入简介">
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left">
+              <label for="category">所属类别</label>
+            </td>
+            <td class="td_right">
+              <select id="category" name="category">
+                <option selected value = "1">数学</option>
+                <option value="2">考研英语</option>
+                <option value="3">雅思</option>
+                <option value="4">政治</option>
+                <option value="5">考公</option>
+                <option value="6">软件工程</option>
+                <option value="7">计算机408</option>
+                <option value="8">四六级</option>
+              </select>
+<!--              <input type="text" id="category" name="category" placeholder="请输入Email">-->
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left">
+              <label for="heji">合辑</label>
+            </td>
+            <td class="td_right">
+              <input type="text" id="heji" name="heji" placeholder="请输入合辑名称">
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left">
+              <label for="video" >文件</label>
+            </td>
+            <td class="td_right">
+              <input type="file" id="video" name="video" accept="video/*">
+            </td>
+          </tr>
+          <tr>
+            <td class="td_left">
+            </td>
+            <td class="td_right check">
+              <input type="submit" class="submit" value="上传">
+              <span id="msg" style="color: red;"></span>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+<!--引入尾部-->
+<div id="footer"></div>
+<!--导入布局js，共享header和footer-->
+<script type="text/javascript" src="js/include.js"></script>
+<script>
+  // 当表单提交时,调用所有的校验方法
+  // $(function () {
+  //   $("#registerForm").submit(function () {
+  //     $.post("upload", $(this).serialize(), function (data) {
+  //       if (data.flag) {
+  //         //注册成功，跳转成功页面
+  //         alert("上传成功!");
+  //         // location.href = "register_ok.html";
+  //       } else {
+  //         //注册失败
+  //         $("#errorMsg").html(data.errorMsg);
+  //       }
+  //     });
+  //     return false;
+  //   });
+  // });
+
+
+  function checkVideoname() {
+
+    let videoname_select = $("#videoname")
+    let videoname = videoname_select.val();
+
+    let reg_username = /^\s*$/;
+    let flag = reg_username.test(videoname);
+    if (flag) {
+      videoname_select.css("border", "1px solid red");
+
+    } else {
+      videoname_select.css("border", "");
+    }
+    return flag;
+  }
+
+  //2. 验证密码是否符合规则
+  function checkIntroduction() {
+
+    let introduction_select = $("#introduction")
+    let introduction = introduction_select.val();
+
+    let reg_password = /^\s*$/;
+
+    let flag = reg_password.test(introduction);
+    if (flag) {
+      introduction_select.css("border", "1px solid red");
+
+    } else {
+      introduction_select.css("border", "");
+
+    }
+    return flag;
+  }
+
+
+  //3. 校验邮箱
+  function checkHeji() {
+
+    let heji_select = $("#heji")
+    let heji = heji_select.val();
+
+    let reg_email = /^\s*$/;
+    let flag = reg_email.test(heji);
+    if (flag) {
+
+      heji_select.css("border", "1px solid red");
+    } else {
+      heji_select.css("border", "");
+
+    }
+    return flag;
+  }
+
+
+
+  //4. 验证姓名是否符合规则
+    // let video_select = $("#video")
+    // let name = name_select.val();
+    //
+    // let reg_name = /^(([a-zA-Z+.?·a-zA-Z]{2,30}(\s+[a-zA-Z+.?·a-zA-Z]{2,30})?$)|([\u4e00-\u9fa5+·?\u4e00-\u9fa5]{2,4}$))/
+    // let flag = reg_name.test(name);
+    // if (flag) {
+    //
+    //   name_select.css("border", "");
+    // } else {
+    //
+    //   name_select.css("border", "1px solid red");
+    // }
+    // return flag;
+  // }
+
+
+
+
+  $(function () {
+    $("#registerForm").submit(function (event) {
+      if (!checkVideoname()&&!checkIntroduction()&&!checkHeji()) {
+        event.preventDefault(); // 阻止表单的默认提交行为
+
+        var formData = new FormData(this); // 创建 FormData 对象
+
+        $.ajax({
+          type: "POST",
+          url: "upload",
+          data: formData,
+          processData: false, // 告诉 jQuery 不要处理发送的数据
+          contentType: false, // 告诉 jQuery 不要设置内容类型请求头
+          success: function (data) {
+            if (data.flag) {
+              location.href = "upload_ok.html";
+            } else {
+              $("#errorMsg").html(data.errorMsg);
+            }
+          }
+        });
+      }
+      return false;
+    });
+
+    $("#videoname").blur(checkVideoname);
+    $("#introduction").blur(checkIntroduction);
+    $("#heji").blur(checkHeji);
+  });
+
+</script>
+
+</body>
+</html>

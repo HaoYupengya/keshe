@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>收藏排行榜</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="js/include.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/favourite-rank.css">
+    <script>
+        $(function () {
+            load();
+        });
+
+        function load() {
+            // 向服务器发送Ajax请求获取页面数据
+            $.get("user/favouriteRank", {}, function (pb) {
+                //2. 展示的第二部分：列表数据的展示
+                let favouriteRank_lis = "";
+                for (i = 0; i < pb.list.length; i++) {
+                    //获取{rid：1,"rname": "【旅展 半价特惠 重走丝路•漫游宁夏 双飞4天】",}
+                    let favouriteRank = pb.list[i];
+                    let li_inRoute = ' <li>\n' +
+                        '     <div class="img"><img src="' + favouriteRank.rimage + '" alt=""></div>\n' +
+                        '     <div class="text1">\n' +
+                        '         <p>' + favouriteRank.rname + '</p>\n' +
+                        '         <br/>\n' +
+                        '         <p>' + favouriteRank.routeIntroduce + '</p>\n' +
+                        '     </div>\n' +
+                        '     <div class="price">\n' +
+                        '         <p class="price_num">\n' +
+                        '             <span>&yen;</span>\n' +
+                        '             <span>' + favouriteRank.price + '</span>\n' +
+                        '             <span>起</span>\n' +
+                        '         </p>\n' +
+                        '         <p><a href="route_detail.html?rid=' + favouriteRank.rid + '">查看详情</a></p>\n' +
+                        '     </div>\n' +
+                        ' </li>';
+                    favouriteRank_lis += li_inRoute;
+                }
+                $("#favourite").html(favouriteRank_lis);
+                // 定位到页面的顶部
+                // window.scrollTo(0, 0);
+            });
+        }
+
+    </script>
+</head>
+<body>
+<!--引入头部-->
+<div id="header"></div>
+<div class="page_one">
+    <section id="content">
+        <section class="hemai_jx">
+            <div class="xinxi clearfix">
+                <div class="left">
+                    <div class="header">
+                        <span>收藏排行榜</span>
+                    </div>
+                    <ul id="favourite">
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+<!--导入底部-->
+<div id="footer"></div>
+
+</body>
+</html>
