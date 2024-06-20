@@ -79,4 +79,14 @@ public class RouteServiceImpl implements RouteService {
         return null;
     }
 
+    public List<Route> findByhobby(String hobby){
+        if (hobby != null){
+            System.out.println("hobby不是空");
+            //1.根据id去route中查询route对象
+            List<Route> route = routeDao.findByhobby(hobby);
+            return route;
+        }
+        return null;
+    }
+
 }

@@ -150,4 +150,16 @@ public class RouteServlet extends BaseServlet {
         mapper.writeValue(response.getOutputStream(),cs);*/
         writeValue(route,response);
     }
+
+    public void findByhobby(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String hobby = request.getParameter("hobby");
+        //调用service查询所有
+        List<Route> route = service.findByhobby(hobby);
+        //序列化json返回
+ /*        ObjectMapper mapper = new ObjectMapper();
+        response.setContentType("application/json;charset=utf-8");
+        mapper.writeValue(response.getOutputStream(),cs);*/
+        writeValue(route,response);
+    }
+
 }

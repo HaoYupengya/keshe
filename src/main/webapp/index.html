@@ -333,7 +333,7 @@
         <div class="jx_top">
             <div class="jx_tit">
                 <img src="imgs/sg.png" alt="" class="shoes">
-                <span>名师课程</span>
+                <span>为您推荐</span>
             </div>
         </div>
         <div class="heima_gn">
@@ -341,7 +341,7 @@
 <!--                <img src="imgs/tea.jpg" alt="" class="haibao">-->
 <!--            </div>-->
             <div class="guone_r">
-                <div class="row">
+                <div id="recommend" class="row">
                     <div class="col-md-4">
                         <a href="route_detail.html">
                             <img src="imgs/jz.jpg" alt="">
@@ -350,50 +350,50 @@
                             </div>
                         </a>
                     </div>
-<!--                    <div class="col-md-4">-->
-<!--                        <a href="route_detail.html">-->
-<!--                            <img src="imgs/jz.jpg" alt="">-->
-<!--                            <div class="has_border">-->
-<!--                                <h3>王道考研/计算机网络/免费 考点精讲</h3>-->
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
 
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-4">-->
-<!--                        <a href="route_detail.html">-->
-<!--                            <img src="imgs/jz.jpg" alt="">-->
-<!--                            <div class="has_border">-->
-<!--                                <h3>王道考研/计算机网络/免费 考点精讲</h3>-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
 
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-4">-->
-<!--                        <a href="route_detail.html">-->
-<!--                            <img src="imgs/jz.jpg" alt="">-->
-<!--                            <div class="has_border">-->
-<!--                                <h3>王道考研/计算机网络/免费 考点精讲</h3>-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
 
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-4">-->
-<!--                        <a href="route_detail.html">-->
-<!--                            <img src="imgs/jz.jpg" alt="">-->
-<!--                            <div class="has_border">-->
-<!--                                <h3>王道考研/计算机网络/免费 考点精讲</h3>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-4">-->
-<!--                        <a href="route_detail.html">-->
-<!--                            <img src="imgs/jz.jpg" alt="">-->
-<!--                            <div class="has_border">-->
-<!--                                <h3>王道考研/计算机网络/免费 考点精讲</h3>-->
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="route_detail.html">
+                            <img src="imgs/jz.jpg" alt="">
+                            <div class="has_border">
+                                <h3>王道考研/计算机网络/免费 考点精讲</h3>
 
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -575,6 +575,48 @@
             document.getElementById("btn2").style.backgroundColor = "rgba(175, 239, 239,0.5)";
             document.getElementById("btn3").style.backgroundColor = "rgba(175, 239, 239,1)";
         }
+    }
+</script>
+
+<script>
+    $(function () {
+        // 查询登录用户信息
+        $.get("user/findOne", {}, function (data) {
+            if (data != null){
+                let hobby=data.hobby;
+                get_recommend(hobby);
+            }
+            // let hobby=data.hobby;
+            // get_recommend(hobby);
+        });
+    });
+
+    // <div className="col-md-4">
+    //     <a href="route_detail.html">
+    //         <img src="imgs/jz.jpg" alt="">
+    //             <div className="has_border">
+    //                 <h3>王道考研/计算机网络/免费 考点精讲</h3>
+    //
+    //             </div>
+    //     </a>
+    // </div>
+
+    function get_recommend(hobby){
+        $.get("route/findByhobby", {hobby:hobby}, function (hb) {
+            let lis = '';
+            //alert(hb.length);数据条数
+            for (let i = 0; i < hb.length; i++) {
+                let videoSrc = 'http://1.94.203.35/' + hb[i].rimage;
+                // let videoSrc = 'http://1.94.203.35/' + route[i].rid + '.mp4';
+                //let li = '<li><a href="#" data-src="' + videoSrc + '">' + route[i].routeIntroduce + '</a></li>';
+                // let li='<div className="col-md-4"><a href="video.html?rid='+hb[i].rid+'"><img src="imgs/jz.jpg" alt=""><div className="has_border"><h3>'
+                //     +hb[i].routeIntroduce+'</h3></div></a></div>';
+                let li = '<div class="col-md-4"><a href="video.html?rid=' + hb[i].rid + '"><img src="imgs/jz.jpg" alt=""><div class="has_border"><h3>' +
+                    hb[i].routeIntroduce + '</h3></div></a></div>';
+                lis += li;
+            }
+            $('#recommend').html(lis);
+        });
     }
 </script>
 </body>
