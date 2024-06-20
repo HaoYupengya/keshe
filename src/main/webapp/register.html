@@ -81,10 +81,19 @@
                     </tr>
                     <tr>
                         <td class="td_left">
-                            <label for="birthday">出生日期</label>
+                            <label for="hobby">爱好</label>
                         </td>
                         <td class="td_right">
-                            <input type="date" id="birthday" name="birthday" placeholder="年/月/日">
+                            <select id="hobby" name="hobby">
+                                <option selected value = "数学">数学</option>
+                                <option value="考研英语">考研英语</option>
+                                <option value="雅思">雅思</option>
+                                <option value="政治">政治</option>
+                                <option value="考公">考公</option>
+                                <option value="软件工程">软件工程</option>
+                                <option value="计算机408">计算机408</option>
+                                <option value="四六级">四六级</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -213,26 +222,27 @@
     }
 
     //4. 验证姓名是否符合规则
-    function checkBirthday() {
 
-        let birth_select = $("#birthday")
-        let birthday = birth_select.val();
-
-        let flag = Object.keys(birthday);
-        if (flag) {
-
-            birth_select.css("border", "");
-        } else {
-
-            birth_select.css("border", "1px solid red");
-        }
-        return flag;
-    }
+    // function checkBirthday() {
+    //
+    //     let birth_select = $("#birthday")
+    //     let birthday = birth_select.val();
+    //
+    //     let flag = Object.keys(birthday);
+    //     if (flag) {
+    //
+    //         birth_select.css("border", "");
+    //     } else {
+    //
+    //         birth_select.css("border", "1px solid red");
+    //     }
+    //     return flag;
+    // }
 
     // 当表单提交时,调用所有的校验方法
     $(function () {
         $("#registerForm").submit(function () {
-            if (checkUsername() && checkPassword() && checkEmail() && checkTelephone() && checkName() && checkBirthday()) {
+            if (checkUsername() && checkPassword() && checkEmail() && checkTelephone() && checkName()) {
                 $.post("user/regist", $(this).serialize(), function (data) {
 
                     if (data.flag) {
@@ -252,7 +262,7 @@
         $("#email").blur(checkEmail);
         $("#telephone").blur(checkTelephone);
         $("#name").blur(checkName);
-        $("#birthday").blur(checkBirthday);
+        // $("#birthday").blur(checkBirthday);
     });
 
 

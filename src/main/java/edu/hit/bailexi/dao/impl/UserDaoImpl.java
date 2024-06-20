@@ -20,10 +20,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     public void save(User user) {
-        String sql = "insert into tab_user(username,password,name,birthday,sex,telephone,email) values(?,?,?,?,?,?,?)";
+        String sql = "insert into tab_user(username,password,name,hobby,sex,telephone,email) values(?,?,?,?,?,?,?)";
 
         jdbcTemplate.update(sql, user.getUsername(), user.getPassword(), user.getName(),
-                user.getBirthday(), user.getSex(), user.getTelephone(), user.getEmail()
+                user.getHobby(), user.getSex(), user.getTelephone(), user.getEmail()
                );
     }
 }
