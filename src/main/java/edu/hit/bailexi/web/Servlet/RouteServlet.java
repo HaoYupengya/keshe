@@ -136,7 +136,6 @@ public class RouteServlet extends BaseServlet {
             //用户已登录
             uid = user.getUid();
         }
-
         favoriteService.removeFavourite(rid, uid);
     }
 
