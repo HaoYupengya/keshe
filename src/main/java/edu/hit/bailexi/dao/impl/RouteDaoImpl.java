@@ -104,4 +104,19 @@ public class RouteDaoImpl implements RouteDao {
 //        String sql = "select * from tab_route where rid = ?";
         return template.query(sql, new BeanPropertyRowMapper<>(Route.class),rid);
     }
+
+    @Override
+    public List<Route> findBYUid(int uid) {
+        String sql = "select * from tab_route where sid = ?";
+//        String sql = "select * from tab_route where rid = ?";
+        return template.query(sql, new BeanPropertyRowMapper<>(Route.class),uid);
+    }
+
+    @Override
+    public List<Route> findByhobby(String hobby) {
+        String sql = "select * from tab_route join tab_category where cname = ?";
+//        String sql = "select * from tab_route where rid = ?";
+        return template.query(sql, new BeanPropertyRowMapper<>(Route.class),hobby);
+    }
+
 }

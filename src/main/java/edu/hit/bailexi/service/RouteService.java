@@ -16,4 +16,7 @@ public interface RouteService {
     public Route findOne(String rid);
     public int upload(Route route);
     public List<Route> findByjunzi(String rid);
+
+    PageBean<Route> findByUser(int uid);
+    public List<Route> findByhobby(String hobby);
 }

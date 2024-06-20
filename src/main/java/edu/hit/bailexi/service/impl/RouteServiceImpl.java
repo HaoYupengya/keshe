@@ -79,4 +79,29 @@ public class RouteServiceImpl implements RouteService {
         return null;
     }
 
+    @Override
+    public PageBean<Route> findByUser(int uid) {
+        PageBean<Route> pageBean = new PageBean<>();
+        List<Route> route;
+        route = routeDao.findBYUid(uid);
+
+        pageBean.setTotalCount(1);
+        pageBean.setTotalPage(1);
+        pageBean.setCurrentPage(1);
+        pageBean.setPageSize(route.size());
+        pageBean.setList(route);
+        return pageBean;
+    }
+
+    @Override
+    public List<Route> findByhobby(String hobby) {
+        if (hobby != null){
+            System.out.println("hobby不是空");
+            //1.根据id去route中查询route对象
+            List<Route> route = routeDao.findByhobby(hobby);
+            return route;
+        }
+        return null;
+    }
+
 }
