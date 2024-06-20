@@ -79,17 +79,4 @@ public class RouteServiceImpl implements RouteService {
         return null;
     }
 
-    @Override
-    public PageBean<Route>findByUser(int user) {
-        List<Route> route =  routeDao.findByUser(user);
-        PageBean<Route> pageBean = new PageBean<>();
-        pageBean.setTotalCount(1);
-        pageBean.setTotalPage(1);
-        pageBean.setCurrentPage(1);
-        pageBean.setPageSize(route.size());
-        pageBean.setList(route);
-        return pageBean;
-    }
-
-
 }
