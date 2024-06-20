@@ -10,8 +10,17 @@ public class User implements Serializable {
     private String username;//用户名，账号
     private String password;//密码
     private String name;//真实姓名
-    private String birthday;//出生日期
+    private String hobby;//出生日期
     private String sex;//男或女
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
     private String telephone;//手机号
     private String email;//邮箱
 
@@ -28,17 +37,17 @@ public class User implements Serializable {
      * @param username
      * @param password
      * @param name
-     * @param birthday
+     * @param hobby
      * @param sex
      * @param telephone
      * @param email
      */
-    public User(int uid, String username, String password, String name, String birthday, String sex, String telephone, String email) {
+    public User(int uid, String username, String password, String name, String hobby, String sex, String telephone, String email) {
         this.uid = uid;
         this.username = username;
         this.password = password;
         this.name = name;
-        this.birthday = birthday;
+        this.hobby = hobby;
         this.sex = sex;
         this.telephone = telephone;
         this.email = email;
@@ -74,14 +83,6 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
     }
 
     public String getSex() {
