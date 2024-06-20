@@ -16,6 +16,10 @@
         </div>
         <!-- 登录状态  -->
         <div class="login">
+<!--            <span id=\"span_username\">欢迎回来，hap</span>-->
+<!--            <a href=\"myvideo.html\" class=\"collection\">我的视频</a>-->
+<!--            <a href=\"myfavorite.html\" class=\"collection\">收藏夹</a>-->
+<!--            <a href=\"javascript:location.href='user/exit'\">退出</a>-->
         </div>
     </div>
     <div class="header_wrap">
@@ -63,6 +67,7 @@
         $.get("user/findOne", {}, function (data) {
             if (data != null){
                 let msg = "<span id=\"span_username\">" + "欢迎回来，" + data.name + "</span>\n" +
+                    "<a href=\"myvideo.html\" class=\"collection\">我的视频</a>\n" +
                     "<a href=\"myfavorite.html\" class=\"collection\">收藏夹</a>\n" +
                     "<a href=\"javascript:location.href='user/exit'\">退出</a>";
                 $(".login").html(msg);

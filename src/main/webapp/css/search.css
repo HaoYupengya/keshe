@@ -54,34 +54,29 @@ a {
   cursor: pointer;
   background-color:  #f7f7f7;
   width: 270px;
-  height: 485px;
+  height: 180px;
   border: 1px solid #eee;
   margin-bottom: 15px;
   overflow: hidden;
 }
 .page_one .xinxi .left > ul li .img {
-  margin-top: 20px;
-  width: 270px;
-  height: 150px;
-  float: left;
+  width: 100%;
+
 }
 .page_one img{
-  margin-left: 61px;
-  width: 142px;
+  width: 100%;
+  height: 150px;
 }
 .page_one .xinxi .left > ul li .text1 {
   text-align: center;
   width: 270px;
-  height: 230px;
   float: left;
   color: #a3a3a3;
   font-size: 14px;
 }
 .page_one .xinxi .left > ul li .text1 p:nth-of-type(1) {
   color: #000;
-  height: 125px;
   font-size: 18px;
-  margin-bottom: 2px;
 }
 .page_one .xinxi .left > ul li .price {
   width: 270px;
@@ -94,7 +89,6 @@ a {
 }
 .page_one .xinxi .left > ul li .price p {
   line-height: 1;
-  margin-top: 12px;
 }
 .page_one .xinxi .left > ul li .price .price_num {
   line-height: 1;

@@ -112,20 +112,18 @@
                     //获取{rid：1,"rname": "【旅展 半价特惠 重走丝路•漫游宁夏 双飞4天】",}
                     let route = pb.list[i];
                     let li_inRoute = ' <li>\n' +
+                        ' <a href="video.html?rid='+ route.rid +'"> '+
                         '     <div class="img"><img src="' + route.rimage + '" alt=""></div>\n' +
                         '     <div class="text1">\n' +
-                        '         <p>' + route.rname + '</p>\n' +
-                        '         <br/>\n' +
-                        '         <p>' + route.routeIntroduce + '</p>\n' +
-                        '     </div>\n' +
-                        '     <div class="price">\n' +
-                        '         <p class="price_num">\n' +
-                        // '             <span>&yen;</span>\n' +
-                        // '             <span>' + route.price + '</span>\n' +
-                        // '             <span>起</span>\n' +
-                        '         </p>\n' +
-                        '         <p><a href="video.html?rid='+ route.rid +'">查看详情</a></p>\n' +
-                        '     </div>\n' +
+                        '         <p>' + route.rname + '/'+route.routeIntroduce+'</p>\n' +
+                        // '         <br/>\n' +
+                        // '         <p>' + route.routeIntroduce + '</p>\n' +
+                        '     </div>\n' + '</a>'
+                        // '     <div class="price">\n' +
+                        // '         <p class="price_num">\n' +
+                        // '         </p>\n' +
+                        // '         <p><a href="video.html?rid='+ route.rid +'">查看详情</a></p>\n' +
+                        // '     </div>\n' +
                         ' </li>';
                     route_lis += li_inRoute;
                 }
@@ -154,7 +152,17 @@
                     <!--  <span class="jg">价格</span>-->
                 </div>
                 <ul id="route">
-
+<!--                    <li>-->
+<!--                        <div class="img"><img src="img/product/small/m3a0b210f47a778170efe260bd75a2fd01.jpg" alt=""></div>-->
+<!--                        <div class="text1">-->
+<!--                            <p>测试视频</p><br/>-->
+<!--&lt;!&ndash;                            <p>这是一个测试视频</p>&ndash;&gt;-->
+<!--                        </div>-->
+<!--&lt;!&ndash;                        <div class="price">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p class="price_num"></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <p><a href="video.html?rid='+ route.rid +'">查看详情</a></p>&ndash;&gt;-->
+<!--&lt;!&ndash;                          </div>&ndash;&gt;-->
+<!--                     </li>-->
                 </ul>
                 <div class="page_num_inf">
                     <i></i> 共

@@ -25,4 +25,5 @@ public interface RouteDao {
 
     Route findNew();
     public List<Route> findByjunzi(int rid);
+    public List<Route> findByUser(int user);
 }

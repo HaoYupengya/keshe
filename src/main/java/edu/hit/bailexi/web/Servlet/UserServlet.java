@@ -3,8 +3,10 @@ package edu.hit.bailexi.web.Servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.hit.bailexi.domain.*;
 import edu.hit.bailexi.service.FavoriteService;
+import edu.hit.bailexi.service.RouteService;
 import edu.hit.bailexi.service.UserService;
 import edu.hit.bailexi.service.impl.FavoriteServiceImpl;
+import edu.hit.bailexi.service.impl.RouteServiceImpl;
 import edu.hit.bailexi.service.impl.UserServiceImpl;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Map;
 
 @WebServlet("/user/*")
@@ -22,6 +25,7 @@ public class UserServlet extends BaseServlet {
     //声明userservice业务对象
     private UserService service = new UserServiceImpl();
     public FavoriteService favor_service = new FavoriteServiceImpl();
+    public RouteService routeService = new RouteServiceImpl();
 
     //注册功能
     public void regist(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -148,5 +152,14 @@ public class UserServlet extends BaseServlet {
         PageBean<Route> pageBean = favor_service.favouriteRank(pageSize);
         writeValue(pageBean,response);
     }
+
+    public void myVideoRanke(HttpServletRequest request, HttpServletResponse response)throws IOException{
+
+        User user = (User) request.getSession().getAttribute("user");
+        int uid = user.getUid();
+        PageBean<Route> pageBean= routeService.findByUser(uid);
+        writeValue(pageBean,response);
+    }
+
 
 }
